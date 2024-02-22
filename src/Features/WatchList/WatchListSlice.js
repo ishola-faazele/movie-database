@@ -23,6 +23,6 @@ export const watchListReducer = (watchList =initialWatchList, action) => {
             })
         default:
             return watchList;
-    }
-}
+    };
+};
 
