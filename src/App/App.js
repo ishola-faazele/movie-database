@@ -1,6 +1,6 @@
 import './App.css';
 
-function App() {
+function App({state, dispatch}) {
   return (
     <div className="App">
       <h1>No More Movies</h1>
