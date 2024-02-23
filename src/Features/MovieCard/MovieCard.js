@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import { addMovie,removeMovie } from "../WatchList/WatchListSlice";
+import './MovieCard.css';
 
 export default function MovieCard({movie, dispatch, state}) {
     const handleWatchList = ({target})=> {
@@ -15,11 +16,11 @@ export default function MovieCard({movie, dispatch, state}) {
         
     }
     return (
-        <div className="MovieCard" title={movie.description}>
-            <h2>Title: {movie.title}</h2>
+        <div className="MovieCard" >
+            <h2 title={movie.description}>{movie.title}</h2>
             <p>Genre: {movie.year}</p>
             <p>Release Year: {movie.year}</p>
-            <div className="watchlist" onClick={handleWatchList}>📺✅</div>
+            <div className="watchlist" onClick={handleWatchList} title="Add to watchlist">📺</div>
         </div>
     )
 }
