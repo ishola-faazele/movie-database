@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { setSearchTerm, clearSearchTerm } from "./SearchBarSlice";
+import { setSearchTerm } from "./SearchBarSlice";
 
 export default function SearchBar({state, dispatch}) {
     const [inputValue, setInputValue] = useState('');

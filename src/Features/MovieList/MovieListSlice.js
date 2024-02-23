@@ -1,4 +1,4 @@
-const movieData = [
+export const movieData = [
     {
       id: 1,
       title: "Inception",
