@@ -50,8 +50,15 @@ export const movieData = [
     // Add more movie objects as needed
 ];
   
+export const changeStatus = (id) => {
+  return {
+    type: 'allMovies/changeStatus',
+    payload: id
+  }
+}
+
 export const loadData = () => {
-    return {
+  return {
         type: 'allMovies/loadData',
         payload: movieData
     }
@@ -61,7 +68,21 @@ export const allMoviesReducer = (allMovies = initialAllMovies, action) => {
     switch(action.type) {
         case 'allMovies/loadData':
             return action.payload
+        case 'allMovies/changeStatus':
+            return allMovies.map(movie => {
+              if(String(movie.id, 10) === String(action.payload,10)) {
+                return {
+                  ...movie,
+                  watchlist: !movie.watchlist
+                };
+              } else {
+                return movie;
+              }
+            })
         default:
             return allMovies
     }
 }
+
+
+
